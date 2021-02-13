@@ -13,15 +13,18 @@ https://docs.google.com/document/d/1_fhoANlBtwT070NOfTIWaXeJ2Tq593k-IGOV2FQszTo/
 Project Setup:
 git clone https://github.com/AjaiGanesh/Study_Plan.git
 
+
 Rails Task:
-cd rails_task/task
-yarn install
-bundle install
-rails db:create
-rails db:migrate
-rails s
-localhost:3000/ -->reference
+
+* cd rails_task/task
+* yarn install
+* bundle install
+* rails db:create
+* rails db:migrate
+* rails s
+* localhost:3000/ -->reference
 
 Ruby Task:
-cd Ruby_task
-run : ruby {filename}.rb
+
+* cd Ruby_task
+* run : ruby {filename}.rb
