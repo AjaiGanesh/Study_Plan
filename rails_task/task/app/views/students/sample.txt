@@ -1,0 +1,81 @@
+
+
+
+  
+
+
+  <%# <%= link_to 'New Student', new_student_path, :class => "btn btn-dark"%>
+  
+  <!-- Button trigger modal -->
+<div class="container">
+  <div class="row">
+    <div class="text-center">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+        New Student
+      </button> 
+    </div>
+  </div>
+
+  <br>
+  <hr>
+
+  <div class="row" id="container_students">
+    <%= render @students %>
+  </div>
+
+  <!-- Modal -->
+  <%= form_for(@student, remote: true) do |form|%>
+    <% if @student.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+            <ul>
+                <% @student.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add Student</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+            <div class="field form-group">
+              <%= form.text_field :first_name, class:"form-control", placeholder: "First Name" %>
+            </div>
+
+            <div class="field form-group">
+                <%= form.text_field :last_name, class:"form-control", placeholder: "Last Name" %>
+            </div>
+
+            <div class="field form-group">
+                <%= form.text_field :age, class:"form-control", placeholder: "Age" %>
+            </div>
+
+            <div class="field form-group">
+                <%= form.text_field :phone, class:"form-control", placeholder: "Phone" %>
+            </div>
+
+            <div class="field form-group">
+                <%= form.text_field :email, class:"form-control", placeholder: "Email" %>
+            </div>        
+          
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= submit_tag "Create", class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%end%>
+    <br/><br/>
+  <%= render "pages/paginate"%>
+</div>

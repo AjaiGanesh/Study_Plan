@@ -1,0 +1,17 @@
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @student.first_name %>
+    <%= @student.last_name %>
+  </h1>
+  <p class="lead">
+    <%= @student.age %>  |
+    <%= @student.phone %> |
+    <%= @student.email %>
+  </p>
+  <br/>
+  <%= link_to 'Edit', edit_student_path(@student), class: "btn btn-dark" %>
+  <%= link_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> 
+  <%= link_to 'Back', students_path, class: "btn btn-dark" %>
+  <%= link_to 'New Mark', new_mark_path(student_id: @student.id, method: :post), class: "btn btn-dark" %>
+
+</div>

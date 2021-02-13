@@ -1,0 +1,7 @@
+<h1>Editing mark</h1>
+<br/>
+<%= render 'updateform', mark: @mark %>   
+<br/>
+<%= link_to 'Show', @mark, class: "btn btn-dark" %> 
+<%= link_to 'Destroy', @mark, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %> 
+<%= link_to 'Back', marks_path, class: "btn btn-dark" %>

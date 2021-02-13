@@ -1,0 +1,26 @@
+<%= form_with(model: mark) do |form| %>
+    <% if mark.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(mark.errors.count, "error") %> prohibited this mark from being saved:</h2>
+
+            <ul>
+                <% mark.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+  <% end %>
+
+    <div class="field form-group">
+        <%= form.text_field :marks, class:"form-control", placeholder: "Marks" %>
+    </div>
+
+    <div class="field form-group">
+        <%= form.text_field :student_id, class:"form-control", placeholder: "student_id" %>
+    </div>
+
+    <br/>
+    <div class="actions">
+        <%= form.submit class:"btn btn-dark" %>
+    </div>
+<% end %>

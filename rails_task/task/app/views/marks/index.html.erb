@@ -1,0 +1,21 @@
+<table class = "table table-striped table-bordered table-hover">
+    <thead class = "thead-dark">
+      <tr>
+        <th>Marks</th>
+        <th>SId</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @marks.each do |mark| %>
+          <tr>
+            <td><%= link_to mark.marks, mark%></td>
+            <td><%= mark.student_id %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br/>
+
+  <%# <%= render "pages/paginatem"%> 

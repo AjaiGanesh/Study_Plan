@@ -1,0 +1,28 @@
+<h1>Search Result</h1>
+
+        <table class = "table table-striped table-bordered table-hover">
+            <thead class = "thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Marks</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <% @results.each do |result| %>
+                <tr>
+                    <td><%= link_to result.student.first_name + " " +  result.student.last_name, result.student%></td>
+                    <td><%= result.student.age %></td>
+                    <td><%= result.student.phone %></td>
+                    <td><%= result.student.email %></td>
+                    <td><%= link_to result.marks, result %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+  <%= render "pages/paginates"%>
+
+        

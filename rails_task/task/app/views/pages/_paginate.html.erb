@@ -1,0 +1,15 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <%= link_to "Previous", students_path(page: @page - 1), class: "page-link", tabindex: "-1"%>
+    </li>
+    <% for i in 1..3 %>
+      <li class="page-item">
+        <%= link_to i, students_path(page: i), class: "page-link"%>
+      </li>
+    <% end %>
+    <li class="page-item">
+      <%= link_to "Next", students_path(page: @page + 1), class: "page-link"%>
+    </li>
+  </ul>
+</nav>
